@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIS Interactive Platform</title>
+    <!-- Link to Lordicon for animated icons -->
+    <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Header with logo and navigation -->
+    <header>
+        <div class="logo">
+            <img src="bis.png" alt="BIS Logo" style="width:50px; height:40px; margin-right:10px;"> <!-- Replace with the actual URL of the BIS logo -->
+            <h1>BIS Interactive</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">
+                    <lord-icon src="https://cdn.lordicon.com/medpcfcy.json" trigger="hover" colors="primary:#ffffff" style="width:30px;height:30px"></lord-icon>
+                    Home</a></li>
+                <li><a href="#games">
+                    <lord-icon src="https://cdn.lordicon.com/zgogqkqu.json" trigger="hover" colors="primary:#ffffff" style="width:30px;height:30px"></lord-icon>
+                    Games</a></li>
+                <li><a href="#activities">
+                    <img src="activity.png" alt="Activity Image" style="width:30px;height:30px;">
+                    Activities</a></li>
+                <li><a href="#rewards">
+                    <lord-icon src="https://cdn.lordicon.com/kbtmbyzy.json" trigger="hover" colors="primary:#ffffff" style="width:30px;height:30px"></lord-icon>
+                    Rewards</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <section id="home">
+        <h2>Welcome to the BIS Interactive Platform</h2>
+        <p>Explore games, challenges, and activities to learn more about standards and certifications.</p>
+    </section>
+
+    <section id="games">
+        <h2>Interactive Games</h2>
+        <div class="game-options">
+            <div class="game" onclick="location.href='puzzle_game.html';" style="cursor:pointer;">
+                <lord-icon
+                    src="https://cdn.lordicon.com/zgogqkqu.json"
+                    trigger="hover"
+                    colors="primary:#121331,secondary:#08a88a"
+                    style="width:100px;height:100px">
+                </lord-icon>
+                <h3>Puzzle Challenges</h3>
+                <p>Match Indian standards with industries or products through puzzles and crosswords.</p>
+            </div>
+            
+            <div class="game" onclick="location.href='simulation_game.html';" style="cursor:pointer;">
+                <lord-icon
+                    src="https://cdn.lordicon.com/fpipqhrr.json"
+                    trigger="hover"
+                    colors="primary:#121331,secondary:#08a88a"
+                    style="width:100px;height:100px">
+                </lord-icon>
+                <h3>Simulation Games</h3>
+                <p>Make decisions based on quality standards in simulated environments.</p>
+            </div>
+
+            <div class="game" onclick="location.href='time_bound_events.html';" style="cursor:pointer;">
+
+                <img src="timebound.png" alt="Activity Image" style="width:100px;height:100px;">
+                <h3>Time-Bound Events</h3>
+                <p>Participate in time-bound challenges with special rewards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities">
+        <h2>Innovative Awareness Activities</h2>
+        <div class="activity-options">
+            <div class="activity">
+                <img src="quiz.png" alt="Activity Image" style="width:100px;height:100px;">
+
+                <h3>Quality Quiz</h3>
+                <p>Test your knowledge about quality standards and certifications through fun quizzes.</p>
+            </div>
+            <div class="activity">
+                <img src="webinar.png" alt="Activity Image" style="width:100px;height:100px;">
+
+                <h3>Webinars</h3>
+                <p>Join interactive webinars with industry experts discussing the importance of BIS standards.</p>
+            </div>
+            <div class="activity">
+                <img src="workshop.png" alt="Activity Image" style="width:100px;height:100px;">
+
+                <h3>Certification Workshops</h3>
+                <p>Participate in workshops to learn how to get your products certified.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="rewards">
+        <h2>Rewards and Incentives</h2>
+        <div class="rewards-details">
+            <lord-icon
+                src="https://cdn.lordicon.com/kbtmbyzy.json"
+                trigger="hover"
+                colors="primary:#121331,secondary:#08a88a"
+                style="width:100px;height:100px">
+            </lord-icon>
+            <p>Earn points and redeem rewards for completing games, quizzes, and challenges!</p>
+            <br>
+            <button class="rewards-button">Earn Rewards</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 BIS Interactive. All rights reserved.</p>
+            <div class="social-icons">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

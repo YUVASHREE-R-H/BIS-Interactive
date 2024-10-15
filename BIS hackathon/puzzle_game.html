@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Search Puzzle Game</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script src="script.js" defer></script> <!-- Link to your JavaScript file -->
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .top-bar {
+            background-color: #4a90e2;
+            width: 100%;
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-title {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .back-home {
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .back-home:hover {
+            color: #d0e3f0; /* Lighten the color on hover */
+        }
+
+        .container {
+            display: flex; /* Flexbox for layout */
+            margin: 20px 0;
+            justify-content: center; /* Center the grid and sidebar */
+            width: 100%; /* Full width */
+        }
+
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 40px); /* Adjust grid size */
+            gap: 2px;
+            margin-right: 20px; /* Space between grid and sidebar */
+            background-color: white;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .word-cell {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #4a90e2;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s; /* Animation for transform */
+        }
+
+        .word-cell:hover {
+            background-color: #e0e0e0; /* Highlight on hover */
+            transform: scale(1.1); /* Scale up on hover */
+        }
+
+        .highlight {
+            background-color: #4a90e2; /* Highlight color for selected words */
+            color: white;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: green;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0 10px;
+        }
+
+        .btn:hover {
+            background-color: #357ab8; /* Darker shade on hover */
+        }
+
+        .sidebar {
+            max-width: 300px; /* Set max width for the sidebar */
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            height: fit-content; /* Adjust height automatically */
+            display: flex;
+            flex-direction: column; /* Stack guidelines and clues */
+        }
+
+        .instructions {
+            margin-bottom: 20px;
+            color:#333 /* Space between guidelines and clues */
+        }
+
+        .clue {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #333; /* Dark text color for visibility */
+        }
+
+        h2 {
+            color: #4a90e2; /* Title color for guidelines and clues */
+        }
+        .word-cell.found {
+    background-color: green; /* Highlight found words in green */
+    color: white;
+    cursor: default; /* Change cursor to default for found words */
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <a href="index.html" class="back-home">🏠 Home</a>
+        <h1 class="game-title">Word Search Puzzle Game</h1>
+    </div>
+
+    <div class="container">
+        <div class="word-grid" id="wordGrid"></div>
+
+        <div class="sidebar">
+            <div class="instructions">
+                <h2>Rules & Guidelines</h2>
+                <br>
+                <ol>
+                    <li>Find and select all the keywords related to BIS.</li>
+                    <li>Words can be placed horizontally, vertically, or diagonally.</li>
+                    <li>Click and drag over the letters to select a word.</li>
+                    <li>Click "Submit" to check your answers or "Reset" to start over.</li>
+                </ol>
+            </div>
+
+            <div class="clues">
+                <h2>Clues to Find the Words </h2>
+                <br>
+                <ul>
+                    <li><span class="clue">1. The study of data trends.</span></li>
+                    <li><span class="clue">2. A plan to achieve goals.</span></li>
+                    <li><span class="clue">3. An organized set of instructions.</span></li>
+                    <li><span class="clue">4. Information collected for analysis.</span></li>
+                    <li><span class="clue">5. A process to make informed choices.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="btn" id="submitBtn">Submit</button>
+        <button class="btn" id="resetBtn">Reset</button>
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+
+</body>
+</html>
